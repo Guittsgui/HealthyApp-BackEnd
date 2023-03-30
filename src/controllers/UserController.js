@@ -21,6 +21,11 @@ class UserController{
             email: email,
             password: password
         }
+        const hasUser = await User.findOne({where: {email: email}})
+        if(hasUser){
+            await response.status(404).json({msg: "Email já Cadastrado"})
+            return
+        }
         User.create(newUser)
         await response.status(201).json({msg: "Usuário Cadastrado com Sucesso."})
     }
