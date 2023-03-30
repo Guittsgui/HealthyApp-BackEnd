@@ -1,6 +1,7 @@
 import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
+import routes from './routes.js';
 
 const app = express()
 
@@ -10,20 +11,15 @@ app.use(cors({
 }))
 
 dotenv.config()
-
 app.use(express.urlencoded({
     extended:true,
 }),)
-
 app.use(express.json())
 
-app.use((req,res)=> {
+app.use(routes)
+app.use((req,res)=>{
     res.status(404)
-    res.json({error: "página não encontrada"})
-})
-
-app.get('/' , (req,res)=>{
-    res.json({message: 'primeira rota criada com sucesso'})
+    res.json({error: "página não existenet"})
 })
 
 app.listen(process.env.PORT)
