@@ -5,11 +5,12 @@ export const User = sequelize.define("User",{
     id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true,
         required:true
     },
     name:{
         type: DataTypes.STRING,
-        required:true
+        required:true,
     },
     email:{
         type: DataTypes.STRING,
