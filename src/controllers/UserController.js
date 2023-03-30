@@ -1,17 +1,11 @@
-import { sequelize } from "../instances/mysql.js"
-
+import { sequelize } from "../instances/mysql.js";
+import {User} from "../models/user.js"
 
 class UserController{
 
-    async index(request,response){
+    index(request,response){
         // listar todos os usuários
-        try{
-            await sequelize.authenticate()
-            console.log('banco funcionando')
-        }catch{
-            console.log('deu ruim')
-        }
-        response.json({msg: "all jsons "})
+        response.json({msg: "all jsonsssss "})
     }
 
     show(){
