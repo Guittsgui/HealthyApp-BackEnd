@@ -27,7 +27,7 @@ class UserController{
             return
         }
         User.create(newUser)
-        await response.status(201).json({msg: "Usuário Cadastrado com Sucesso."})
+        await response.status(201).json({msg: "Usuário Cadastrado com Sucesso"})
     }
 
     update(){
