@@ -1,5 +1,4 @@
-import { sequelize } from "../instances/mysql.js";
-import {User} from "../models/user.js"
+import { User } from '../ model/UserModel.js';
 
 class UserController{
 
