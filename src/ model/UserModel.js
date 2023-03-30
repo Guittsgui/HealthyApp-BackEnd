@@ -20,4 +20,7 @@ export const User = sequelize.define("User",{
         required:true
     }
 
+},{
+    tableName: 'users',
+    timestamps:false
 })

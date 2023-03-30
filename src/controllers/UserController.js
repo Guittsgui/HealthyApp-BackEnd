@@ -1,24 +1,28 @@
+import { response } from 'express';
 import { User } from '../ model/UserModel.js';
 
 class UserController{
 
-    index(request,response){
+    async index(request,response){
         // listar todos os usuários
-        response.json({msg: "all jsonsssss "})
+        const users = await User.findAll()
+        const json = JSON.stringify(users)
+        response.json(users)
     }
+    async show(request,response,id){
 
-    show(){
-        // obter um registro
+        const user = await User.findByPk(id)
+
+        response.json({msg: "vodka"})
     }
-
-    store(){
+    async store(request,response){
         // salvar novo registor
+        
+        await response.json({})
     }
-
     update(){
         //ALTERAR Registro
     }
-
     delete(){
      //remover registro
     }
