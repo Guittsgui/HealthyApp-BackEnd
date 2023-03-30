@@ -1,4 +1,4 @@
-import { Model, DataTypes } from 'sequelize'
+import {DataTypes } from 'sequelize'
 import { sequelize } from '../instances/mysql'
 
 export const User = sequelize.define("User", {
@@ -7,13 +7,16 @@ export const User = sequelize.define("User", {
         type: DataTypes.INTEGER
     },
     name:{
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        required: true
     },
     email:{
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        required: true
     },
     password:{
-        type:DataTypes.STRING
+        type:DataTypes.STRING,
+        required: true
     }
 },{
     tableName: 'users',
