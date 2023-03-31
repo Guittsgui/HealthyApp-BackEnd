@@ -1,5 +1,7 @@
 import { response } from 'express';
 import { User } from '../ model/UserModel.js';
+import JWT from 'jsonwebtoken'
+import dotenv from 'dotenv'
 
 class UserController{
 
@@ -42,8 +44,14 @@ class UserController{
         const {email, password} = request.body
         const hasUser = await User.findOne({where: {email: email, password: password}})
         console.log(hasUser)
+
         if(hasUser){
-            response.status(200).json({msg: 'Usuário Encontrado'})
+            const token = JWT.sign(
+                {id: hasUser.id, email: hasUser.email},
+                process.env.JWT_SECRET_KEY,
+                { expiresIn: '2h'}
+            )
+            response.status(200).json({token, msg: "Usuário Encontrado!"})
         }else{
             response.status(400).json({msg: 'Login ou Senha Inválidos'})
         }
