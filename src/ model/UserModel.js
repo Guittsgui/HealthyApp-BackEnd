@@ -19,6 +19,10 @@ export const User = sequelize.define("User",{
     password:{
         type: DataTypes.STRING,
         required:true
+    },
+    isadm:{
+        type: DataTypes.TINYINT,
+        defaultValue: 0
     }
 
 },{
