@@ -43,7 +43,6 @@ class UserController{
     async verifyLogin(request, response){
         const {email, password} = request.body
         const hasUser = await User.findOne({where: {email: email, password: password}})
-        console.log(hasUser)
 
         if(hasUser){
             const token = JWT.sign(
@@ -51,7 +50,7 @@ class UserController{
                 process.env.JWT_SECRET_KEY,
                 { expiresIn: '2h'}
             )
-            response.status(200).json({token, msg: "Usuário Encontrado!"})
+            response.status(200).json({token, msg: "Usuário Encontrado!", hasUser})
         }else{
             response.status(400).json({msg: 'Login ou Senha Inválidos'})
         }
