@@ -23,6 +23,10 @@ export const User = sequelize.define("User",{
     isadm:{
         type: DataTypes.TINYINT,
         defaultValue: 0
+    },
+    gender:{
+        type: DataTypes.STRING,
+        defaultValue: 'male'
     }
 
 },{

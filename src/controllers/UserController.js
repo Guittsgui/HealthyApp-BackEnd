@@ -12,7 +12,9 @@ class UserController{
     }
 
     async show(request,response){
-        
+        const id  = request.params.id 
+        const user = await User.findOne({where: {id: id}})
+        response.status(200).json(user)
     }
 
     async store(request,response){
