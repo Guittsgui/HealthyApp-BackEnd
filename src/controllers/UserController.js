@@ -8,7 +8,6 @@ class UserController{
     async index(request,response){
         // listar todos os usuários
         const users = await User.findAll()
-        const json = JSON.stringify(users)
         response.status(200).json(users)
     }
 
