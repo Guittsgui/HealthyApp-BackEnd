@@ -18,11 +18,12 @@ class UserController{
     }
 
     async store(request,response){
-        const {fullname, email, password} = request.body
+        const {fullname, email, password, gender} = request.body
         const newUser = {
             name: fullname,
             email: email,
-            password: password
+            password: password,
+            gender: gender
         }
         const hasUser = await User.findOne({where: {email: email}})
         if(hasUser){
