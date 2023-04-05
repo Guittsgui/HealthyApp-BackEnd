@@ -27,6 +27,18 @@ export const User = sequelize.define("User",{
     gender:{
         type: DataTypes.STRING,
         defaultValue: 'male'
+    },
+    height: {
+        type: DataTypes.DECIMAL,
+    },
+    weight:{
+        type: DataTypes.DECIMAL,
+    },
+    imc: {
+        type: DataTypes.DECIMAL,
+    },
+    goal: {
+        type: DataTypes.STRING
     }
 
 },{
