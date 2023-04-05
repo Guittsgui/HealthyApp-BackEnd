@@ -21,7 +21,7 @@ class DietController{
             userId: userId
         }
         Diet.create(newDiet)
-        await response.status(201).json({msg: "Usuário Cadastrado com Sucesso"})       
+        await response.status(201).json({msg: "Dieta Cadastrada com Sucesso"})       
     }
 }
 

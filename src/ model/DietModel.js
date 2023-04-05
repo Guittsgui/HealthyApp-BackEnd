@@ -16,7 +16,7 @@ export const Diet = sequelize.define("Diet",{
         type: DataTypes.STRING,
         required: true
     },
-    dataExpires: {
+    dateExpires: {
         type: DataTypes.DATE,
         required:true
     },
@@ -26,5 +26,5 @@ export const Diet = sequelize.define("Diet",{
     }
 },{
     tableName: 'diet',
-    timestamps: 'false'
+    timestamps: false
 })
