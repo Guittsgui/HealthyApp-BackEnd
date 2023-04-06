@@ -26,6 +26,7 @@ export const Post = sequelize.define("Post",{
     },
     likes:{
         type: DataTypes.INTEGER,
+        defaultValue: 0
     }
 
 },{
