@@ -5,6 +5,11 @@ class DietController{
     async findDietByUserId(request, response){
         const id = request.params.id 
         const dietSearched = await Diet.findAll({where: {userId: id}})
+        if(!dietSearched){
+            response.status(400).json({msg: 'Este usuário ainda nao possui um planejamento Alimentar.'})
+            return
+        }
+        response.status(200).json(dietSearched)
     }
 
     async delete(request, response){
