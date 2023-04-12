@@ -17,6 +17,11 @@ class PostController{
         response.status(201).json({msg: 'Post Criado com Sucesso'})
     }
 
+    getAllPosts(request, response){
+        const allPosts = Post.findAll();
+        response.status(200).json(allPosts)
+    }
+
 }
 
 export default new PostController()
