@@ -12,19 +12,18 @@ export const Comment = sequelize.define("Comment", {
         type: DataTypes.INTEGER,
         required: true
     },
-    userName:{
-        type: DataTypes.STRING,
+    userId:{
+        type: DataTypes.INTEGER,
         required:true
-    },
-    date: {
-        type: DataTypes.DATE,
-        required: true
     },
     content:{
         type: DataTypes.STRING,
         required: true
+    },
+    date: {
+        type: DataTypes.DATE,
+        required: true
     }
-
 },{
     tableName: "blogcomments",
     timestamps: false

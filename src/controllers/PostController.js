@@ -17,9 +17,17 @@ class PostController{
         response.status(201).json({msg: 'Post Criado com Sucesso'})
     }
 
-    getAllPosts(request, response){
-        const allPosts = Post.findAll();
+    async getAllPosts(request, response){
+        const allPosts = await Post.findAll();
+        console.log(allPosts)
         response.status(200).json(allPosts)
+    }
+
+    async getPostByID(request, response){
+        const id = request.params.id
+        const post = await Post.findOne({where: {id: id}})
+        response.status(200).json(post)
+
     }
 
 }
