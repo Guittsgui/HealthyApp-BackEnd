@@ -26,6 +26,11 @@ class ComentController{
         response.status(200).json(commentsList)
     }
 
+    async deleteComment(request, response){
+        const commentToBeDelet = request.body
+        await Comment.destroy({where: {id: commentToBeDelet.id}})
+    }
+
 }
 
 export default new ComentController()
