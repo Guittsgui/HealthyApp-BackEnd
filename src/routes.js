@@ -21,7 +21,7 @@ router.get('/post/:id',PostController.getPostByID)
 router.get('/post',PostController.getAllPosts)
 
 router.post('/comment',CommentController.store)
-router.get('/comment',CommentController.getCommentByPostId)
+router.get('/comment/:id',CommentController.getCommentByPostId)
 
 
 export default router;

@@ -15,6 +15,7 @@ class ComentController{
             content: content,
             date: date
         }
+        console.log(CommentToAdd)
         await Comment.create(CommentToAdd)
         response.status(201).json({msg: 'Post criado com sucesso.'})
     }
